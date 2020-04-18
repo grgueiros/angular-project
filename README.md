@@ -6,3 +6,5 @@ Projeto desenvolvido utilizando o Angular. Consiste em uma aplicação de fotos,
 
 O Sistema de login basea-se no token que é gerado pelo back-end para cada usuário gerado. A partir deste token que recebemos na resposta da requisição e a aplicação devolve no cabeçalho de todas as requisições feitas a partir de que o login  identificado. Esse processo é feito através de um interceptor que, através do service, sabe se o login foi feito e a partir daí, envia o token no corpo de todas as requisições.
 
+
+(projeto desenvolvido no decorrer do curso de Angular da Alura - cursos de Tecnologia)
