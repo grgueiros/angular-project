@@ -20,8 +20,15 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@ng-bootstrap/ng-bootstrap": "^6.0.2",
+    "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
+    "font-awesome": "^4.7.0",
+    "jquery": "^1.9.1",
+    "jwt-decode": "^2.2.0",
+    "popper.js": "^1.16.0",
     "rxjs": "^6.0.0",
+    "stacktrace-js": "^2.0.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

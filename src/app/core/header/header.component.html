@@ -1,0 +1,53 @@
+<header class="fixed-top">
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand">
+      <i
+        tabindex="0"
+        (keyup.space)="menu.toggle()"
+        class="fa fa-bars"
+        (click)="menu.toggle()"
+      >
+      </i>
+      ALURAPIC
+    </a>
+    <ap-menu #menu>
+      <ul class="list-unstyled">
+        <p>MENU</p>
+        <div ap-onlyIfLogged>
+          <hr />
+          <li>
+            <p
+              class="btn btn-outline-light"
+              [routerLink]="['']"
+              (click)="menu.toggle()"
+            >
+              dashboard
+            </p>
+          </li>
+          <hr />
+          <li>
+            <p class="btn btn-outline-light" [routerLink]="['p', 'add']" (click)="menu.toggle()">
+              upload
+            </p>
+          </li>
+        </div>
+        <hr />
+        <li><p>About us</p></li>
+      </ul>
+    </ap-menu>
+    <div *ngIf="user$ | async as user; else login">
+      <i class="fa fa-user-circle mr-2"></i>
+      <a class="mr-2">{{ user?.name }}</a>
+      <a (click)="logout()" class="btn btn-light">Logout</a>
+    </div>
+    <ng-template #login>
+      <span class="navbar-text">
+        <a [routerLink]="['']">Please, login!</a>
+      </span>
+    </ng-template>
+  </nav>
+</header>
+<div class="fixed-top">
+  <ap-alert></ap-alert>
+  <ap-loadingBar></ap-loadingBar>
+</div>

@@ -1,0 +1,6 @@
+<div class="text-center" *ngIf="hasMore; else elseTemplate">
+  <button class="btn btn-primary">Load more</button>
+</div>
+<ng-template #elseTemplate>
+  <p class="text-muted text-center">No more pages to load</p>
+</ng-template>

@@ -1,0 +1,35 @@
+<div *ngIf="comments$ | async as comments">
+  <ul class="list-unstyled comment-list">
+    <li  *ngFor="let comment of comments">
+      <a
+        class="text-dark font-weight-bold mr-1"
+        [routerLink]="['/user', 'comment.userName']"
+      >
+        {{ comment.userName }}
+      </a>
+      <em>{{comment.date | date:"dd-MM-yyyy HH:mm"}}</em>
+      <p class="mb-2">{{comment.text}}</p>
+    </li>
+  </ul>
+  <div class="mt-4">
+    <form [formGroup]="commentForm" (submit)="uploadComment()">
+      <div class="input-group">
+        <textarea formControlName="text" class="form-control"></textarea>
+        <div class="input-group-append">
+            <button [disabled]="commentForm.invalid" type="submit" class="btn btn-primary pull-left">Publish</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+<div *ngIf="commentForm.get('text').errors?.loginRequired">
+  <ap-vmessage  
+      text="Sign in our create an account to add a comment">
+  </ap-vmessage>
+    <a class="ml-4" [routerLink]="['']">Sign In or Register Now</a>
+</div>
+<ap-vmessage 
+    *ngIf="commentForm.get('text').errors?.maxlength" 
+    text="Your comment cannot go over 300 characters ¬¬">
+</ap-vmessage>
+
