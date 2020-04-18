@@ -1,27 +1,8 @@
-# Alurapic
+# Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Projeto desenvolvido utilizando o Angular. Consiste em uma aplicação de fotos, que consome uma API, tem um sistema de login que permite identificar o usuário ou registrá-lo. É capaz de adicionar novas fotos (autorizando ou não a adição de comentários), removê-las e ver comentários. Possui uma página que lista as fotos do usuário, e uma que detalha as fotos, mostrando número de "likes" e comentários.
 
-## Development server
+### Login
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+O Sistema de login basea-se no token que é gerado pelo back-end para cada usuário gerado. A partir deste token que recebemos na resposta da requisição e a aplicação devolve no cabeçalho de todas as requisições feitas a partir de que o login  identificado. Esse processo é feito através de um interceptor que, através do service, sabe se o login foi feito e a partir daí, envia o token no corpo de todas as requisições.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
